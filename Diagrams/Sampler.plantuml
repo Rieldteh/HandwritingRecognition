@@ -1,0 +1,32 @@
+@startuml
+
+top to bottom direction
+skinparam linetype ortho
+
+class Indexer as "app.dataset.image.sampler.Indexer" {
+   + indexes:
+   + randomization:
+   + count:
+   + index:
+   + __init__(self, count, randomization=True):
+   + get_index(self):
+}
+class Sampler as "app.dataset.image.sampler.Sampler" {
+   + images:
+   + count:
+   + indexer:
+   + process_text:
+   + samples:
+   + labels:
+   + samples_created:
+   + __init__(self, samples, process_text):
+   - __create_samples(self):
+   + get_steps(self):
+   - __create_inputs(self, parts):
+   - __fill_sample(self, parts):
+   - __get_sample_parts(self):
+   + next(self):
+}
+
+Indexer "1" <- "1"  Sampler
+@enduml

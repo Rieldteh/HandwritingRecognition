@@ -1,0 +1,14 @@
+@startuml
+
+top to bottom direction
+skinparam linetype ortho
+
+class node0 as "app.model.model.Model" {
+   + mode:
+   + __init__(self, mode):
+   + get_model(self):
+   + train(self, train_data, val_data):
+   + predict(self, weights, image):
+}
+
+@enduml

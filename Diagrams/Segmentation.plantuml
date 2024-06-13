@@ -1,0 +1,16 @@
+@startuml
+
+top to bottom direction
+skinparam linetype ortho
+
+class node0 as "app.dataset.image.segment.Segmentation" {
+   + image:
+   + MIN_AREA:
+   + __init__(self, image):
+   - __resize(self):
+   - __clean(self, image):
+   - __get_contours(self, thresh):
+   + get_words(self):
+}
+
+@enduml

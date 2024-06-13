@@ -1,0 +1,20 @@
+@startuml
+
+top to bottom direction
+skinparam linetype ortho
+
+class Resizer as "app.dataset.image.resizer.Resizer" {
+   - __image:
+   - __width:
+   - __height:
+   - __init__(self, image, width, height):
+   - __expand(self, img, width, height):
+   + calculate_first_condition(self, real_height, real_width):
+   + calculate_second_condition(self, real_height, real_width):
+   + calculate_third_condition(self, real_height, real_width):
+   - __crop(self, img):
+   - __clean(self, img):
+   + resize(self):
+}
+
+@enduml

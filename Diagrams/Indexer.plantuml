@@ -1,0 +1,15 @@
+@startuml
+
+top to bottom direction
+skinparam linetype ortho
+
+class node0 as "app.dataset.image.sampler.Indexer" {
+   + indexes:
+   + randomization:
+   + count:
+   + index:
+   + __init__(self, count, randomization=True):
+   + get_index(self):
+}
+
+@enduml

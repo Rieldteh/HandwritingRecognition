@@ -1,0 +1,26 @@
+@startuml
+
+top to bottom direction
+skinparam linetype ortho
+
+class Fit as "app.model.fit.Fit" {
+   + validation_data:
+   + model:
+   + train_data:
+   + WEIGHTS_PATH:
+   + MONITOR:
+   + EPOCHS:
+   + __init__(self, model, train_data, validation_data):
+   - __get_checkpoint_callback(self):
+   - __get_stop_callback(self):
+   + run(self):
+}
+class Model as "app.model.model.Model" {
+   + mode:
+   + __init__(self, mode):
+   + get_model(self):
+   + train(self, train_data, val_data):
+   + predict(self, weights, image):
+}
+Model "1" <-* "1"  Fit
+@enduml

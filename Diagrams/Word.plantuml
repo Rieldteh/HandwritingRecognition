@@ -1,0 +1,12 @@
+@startuml
+
+top to bottom direction
+skinparam linetype ortho
+
+class node0 as "app.dataset.word.Word" {
+   + image:
+   + text:
+   + __init__(self, text: str, image: np.ndarray):
+}
+
+@enduml

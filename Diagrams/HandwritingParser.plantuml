@@ -1,0 +1,78 @@
+@startuml
+
+top to bottom direction
+skinparam linetype ortho
+
+class HandwritingParser as "app.recognition.HandwritingParser" {
+   + parser:
+   + MODEL_FORMAT_ERROR:
+   + MODEL_NOT_FOUND_ERROR:
+   + DATASET_NOT_FOUND_ERROR:
+   + IMAGE_FORMAT_ERROR:
+   + IMAGE_NOT_FOUND_ERROR:
+   + __init__(self):
+   + parse(self):
+   - __verify_args(self, args):
+   - __verify_file_exists(self, path, message):
+   - __verify_file_format(self, file_path, formats, message):
+   - __verify_predict_args(self, args):
+   - __verify_train_args(self, args):
+}
+class ArgumentParser as "argparse.ArgumentParser" {
+   + formatter_class:
+   + fromfile_prefix_chars:
+   + allow_abbrev:
+   # _subparsers:
+   + epilog:
+   # _optionals:
+   + usage:
+   + exit_on_error:
+   # _positionals:
+   + prog:
+   + add_help:
+   + __init__(self,
+                 prog=None,
+                 usage=None,
+                 description=None,
+                 epilog=None,
+                 parents=[],
+                 formatter_class=HelpFormatter,
+                 prefix_chars='-',
+                 fromfile_prefix_chars=None,
+                 argument_default=None,
+                 conflict_handler='error',
+                 add_help=True,
+                 allow_abbrev=True,
+                 exit_on_error=True): 
+   # _get_kwargs(self):
+   + add_subparsers(self, **kwargs):
+   # _add_action(self, action):
+   # _get_optional_actions(self):
+   # _get_positional_actions(self):
+   + parse_args(self, args=None, namespace=None):
+   + parse_known_args(self, args=None, namespace=None):
+   # _parse_known_args(self, arg_strings, namespace):
+   # _read_args_from_files(self, arg_strings):
+   + convert_arg_line_to_args(self, arg_line):
+   # _match_argument(self, action, arg_strings_pattern):
+   # _match_arguments_partial(self, actions, arg_strings_pattern):
+   # _parse_optional(self, arg_string):
+   # _get_option_tuples(self, option_string):
+   # _get_nargs_pattern(self, action):
+   + parse_intermixed_args(self, args=None, namespace=None):
+   + parse_known_intermixed_args(self, args=None, namespace=None):
+   # _get_values(self, action, arg_strings):
+   # _get_value(self, action, arg_string):
+   # _check_value(self, action, value):
+   + format_usage(self):
+   + format_help(self):
+   # _get_formatter(self):
+   + print_usage(self, file=None):
+   + print_help(self, file=None):
+   # _print_message(self, message, file=None):
+   + exit(self, status=0, message=None):
+   + error(self, message):
+}
+ArgumentParser "1" <-* "1"  HandwritingParser
+
+@enduml

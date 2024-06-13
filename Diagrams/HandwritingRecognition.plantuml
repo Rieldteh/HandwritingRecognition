@@ -1,0 +1,14 @@
+@startuml
+
+top to bottom direction
+skinparam linetype ortho
+
+class HandwritingRecognition as "app.recognition.HandwritingRecognition" {
+   + args:
+   + __init__(self, _args):
+   + main(self):
+}
+
+
+
+@enduml
