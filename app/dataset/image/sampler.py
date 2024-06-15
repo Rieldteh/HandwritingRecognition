@@ -36,7 +36,7 @@ class Sampler:
 
     def __create_samples(self):
         word_counter = 0
-        for word in tqdm(enumerate(self.samples), desc=self.process_text):
+        for word in tqdm(self.samples, desc=self.process_text):
             self.images[word_counter, :, :] = word.image
             self.labels.append(word.text)
             word_counter += 1
